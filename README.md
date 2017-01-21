@@ -20,7 +20,7 @@ tomcat_install 'helloworld' do
 end
 ````
 ###Step-3 
-Deploy the sample app
+Deploy the sample app.
 Using war file. (sample.war)
 
 ###Step-4
