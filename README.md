@@ -13,15 +13,16 @@ default[:run_notifier][:slack][:enabled] = <true|false>
 installs java 8
 
 ###Step-2
-Installs TOmcat 8
-
-###Step-3 
-Deploy the sample app
+Installs Tomcat 8
 ````
 tomcat_install 'helloworld' do
   version '8.0.36'
 end
 ````
+###Step-3 
+Deploy the sample app
+Using war file. (sample.war)
+
 ###Step-4
 Start the app server
 ````
