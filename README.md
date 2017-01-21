@@ -24,6 +24,9 @@ end
 ````
 ###Step-4
 Start the app server
+````
+The app can be accessed at http://<ipaddress>:8080/sample
+````
 
 ###Step-5
 Referenced the notification module at the begining
