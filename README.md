@@ -17,7 +17,8 @@ Installs TOmcat 8
 
 ###Step-3 
 Deploy the sample app
-````tomcat_install 'helloworld' do
+````
+tomcat_install 'helloworld' do
   version '8.0.36'
 end
 ````
