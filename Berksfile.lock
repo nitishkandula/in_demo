@@ -1,0 +1,35 @@
+DEPENDENCIES
+  in_demo
+    path: .
+    metadata: true
+  run-notifier
+    git: https://github.com/faizalzakaria/chef-run-notifier
+    revision: aa80484465abfd3d3eb804daba0980d9a920cd7e
+  tomcat
+    git: https://github.com/chef-cookbooks/tomcat
+    revision: d116dc1b63e68466b3be411b802039cc14cf954e
+  yum
+
+GRAPH
+  apt (5.0.1)
+    compat_resource (>= 12.16.3)
+  chef_handler (2.1.0)
+  compat_resource (12.16.3)
+  homebrew (3.0.0)
+  in_demo (0.1.0)
+    java (>= 0.0.0)
+    run-notifier (>= 0.3.2)
+    tomcat (>= 2.3.4)
+  java (1.46.0)
+    apt (>= 0.0.0)
+    homebrew (>= 0.0.0)
+    windows (>= 0.0.0)
+  ohai (4.2.3)
+    compat_resource (>= 12.14.7)
+  run-notifier (0.3.2)
+    chef_handler (>= 0.0.0)
+  tomcat (2.3.4)
+    compat_resource (>= 12.16.0)
+  windows (2.1.1)
+    ohai (>= 4.0.0)
+  yum (4.1.0)

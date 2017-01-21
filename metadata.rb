@@ -1,0 +1,11 @@
+name 'in_demo'
+maintainer 'nitish_kandula'
+maintainer_email 'nitishkandula@gmail.com'
+license 'all_rights'
+description 'Installs/Configures in_demo'
+long_description 'Installs/Configures in_demo'
+version '0.1.0'
+
+depends 'java'
+depends 'tomcat', '>= 2.3.4'
+depends 'run-notifier', '>= 0.3.2'
