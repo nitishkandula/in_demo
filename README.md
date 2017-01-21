@@ -5,7 +5,7 @@ For now the configuration is set to send the notification to slack.
 
 ````
 Atttribute options:
-You can pick either of the hipchat or slack notification hooks.
+You can pick either hipchat or slack notification hooks.
 default[:run_notifier][:hipchat][:enabled] = <true|false> 
 default[:run_notifier][:slack][:enabled] = <true|false>
 ````
@@ -17,7 +17,10 @@ Installs TOmcat 8
 
 ###Step-3 
 Deploy the sample app
-
+````tomcat_install 'helloworld' do
+  version '8.0.36'
+end
+````
 ###Step-4
 Start the app server
 
