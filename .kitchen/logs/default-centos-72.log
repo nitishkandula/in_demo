@@ -73,3 +73,22 @@ I, [2017-01-24T03:41:50.119129 #46123]  INFO -- default-centos-72:     - change 
 I, [2017-01-24T03:41:50.119141 #46123]  INFO -- default-centos-72:     - change owner from '' to 'tomcat_helloworld'
 I, [2017-01-24T03:41:50.167510 #46123]  INFO -- default-centos-72:     - change group from '' to 'tomcat_helloworld'
 I, [2017-01-24T03:41:50.167564 #46123]  INFO -- default-centos-72:     - restore selinux security context
+I, [2017-01-24T03:43:49.065965 #46123]  INFO -- default-centos-72:   * remote_file[/opt/tomcat_helloworld/webapps/user-v1.war] action create_if_missing
+I, [2017-01-24T03:43:49.167820 #46123]  INFO -- default-centos-72:     - create new file /opt/tomcat_helloworld/webapps/user-v1.war
+I, [2017-01-24T03:43:49.167914 #46123]  INFO -- default-centos-72:     - update content in file /opt/tomcat_helloworld/webapps/user-v1.war from none to c234b4
+I, [2017-01-24T03:43:49.168067 #46123]  INFO -- default-centos-72:     (file sizes exceed 10000000 bytes, diff output suppressed)
+I, [2017-01-24T03:43:49.168134 #46123]  INFO -- default-centos-72:     - change mode from '' to '0755'
+I, [2017-01-24T03:43:49.168173 #46123]  INFO -- default-centos-72:     - change owner from '' to 'tomcat_helloworld'
+I, [2017-01-24T03:43:49.198744 #46123]  INFO -- default-centos-72:     - change group from '' to 'tomcat_helloworld'
+I, [2017-01-24T03:43:49.198812 #46123]  INFO -- default-centos-72:     - restore selinux security context
+I, [2017-01-24T03:43:49.207467 #46123]  INFO -- default-centos-72:   * tomcat_service_systemd[helloworld] action start
+I, [2017-01-24T03:43:49.207609 #46123]  INFO -- default-centos-72:     * template[/etc/systemd/system/tomcat_helloworld.service] action create (up to date)
+I, [2017-01-24T03:43:49.207713 #46123]  INFO -- default-centos-72:     * execute[Load systemd unit file] action nothing (skipped due to action :nothing)
+I, [2017-01-24T03:43:49.324852 #46123]  INFO -- default-centos-72:     * service[tomcat_helloworld] action start (up to date)
+I, [2017-01-24T03:43:49.324926 #46123]  INFO -- default-centos-72:      (up to date)
+I, [2017-01-24T03:43:49.409221 #46123]  INFO -- default-centos-72: 
+I, [2017-01-24T03:43:49.409307 #46123]  INFO -- default-centos-72: Running handlers:
+I, [2017-01-24T03:43:49.945386 #46123]  INFO -- default-centos-72:   - StatusNotifierHandler
+I, [2017-01-24T03:43:49.945483 #46123]  INFO -- default-centos-72: Running handlers complete
+I, [2017-01-24T03:43:49.945538 #46123]  INFO -- default-centos-72: Chef Client finished, 2/24 resources updated in 02 minutes 40 seconds
+I, [2017-01-24T03:43:50.101569 #46123]  INFO -- default-centos-72: Finished converging <default-centos-72> (2m48.21s).
