@@ -10,6 +10,12 @@ include_recipe 'run-notifier'
 #install java 8
 package  'java-1.8.0-openjdk'
 
+ips = []
+# Get environment specific mqsql IP address
+search(:node, "(role:mysql_role)").each do |n|
+    ips << n['ipaddress']
+end
+
 #install tomcat 8 'helloworld' to /opt/tomcat_helloworld_8_0_36/ with a symlink at /opt/tomcat_helloworld/
 tomcat_install 'helloworld' do
   version '8.0.36'
@@ -33,12 +39,20 @@ directory '/opt/config' do
   action :create
 end
 
+
+  Chef::Log.warn("user-v1 will be connected to following mysql #{ips}")
+  mysql_url = ips.map { |ip| "#{ip}:3306"  }.join(',')
+
+
 #set the application property file
 template '/opt/config/application.properties' do
   source 'application.properties.erb'
   owner 'tomcat_helloworld'
   group 'tomcat_helloworld'
   mode 0755
+  variables ({
+         :mysql_url => mysql_url
+       })
 end
 
 #get the war file
