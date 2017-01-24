@@ -16,12 +16,38 @@ tomcat_install 'helloworld' do
 end
 
 #deploy sample app
-cookbook_file '/opt/tomcat_helloworld/webapps/sample.war' do
-  source 'sample.war'
+# cookbook_file '/opt/tomcat_helloworld/webapps/sample.war' do
+#   source 'sample.war'
+#   owner 'tomcat_helloworld'
+#   group 'tomcat_helloworld'
+#   mode '0755'
+#   action :create
+# end
+
+#deploy the second app
+#create the config directory
+directory '/opt/config' do
   owner 'tomcat_helloworld'
   group 'tomcat_helloworld'
   mode '0755'
   action :create
+end
+
+#set the application property file
+template '/opt/config/application.properties' do
+  source 'application.properties.erb'
+  owner 'tomcat_helloworld'
+  group 'tomcat_helloworld'
+  mode 0755
+end
+
+#get the war file
+remote_file "/opt/tomcat_helloworld/webapps/user-v1.war" do
+   source "https://s3-us-west-2.amazonaws.com/opswork-nitish/user_api-1.0-SNAPSHOT.war"
+   owner 'tomcat_helloworld'
+   group 'tomcat_helloworld'
+   mode 0755
+   action :create_if_missing
 end
 
 #start the app
